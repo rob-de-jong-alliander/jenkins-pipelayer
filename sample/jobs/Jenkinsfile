@@ -14,7 +14,10 @@ pipeline {
             steps {
                 checkout scm
                 // this will generate jobs from folder jobs to jenkins folder pipelines
-                generateJobs 
+                generateJobs {
+                    gitConfigJenkinsBranch = 'master'
+                    gitRemoteUrl = 'git-uri'
+                }
             }
         }
     }
