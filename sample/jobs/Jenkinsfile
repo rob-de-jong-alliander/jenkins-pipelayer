@@ -20,7 +20,7 @@ pipeline {
                     // a link to your git repository
                     gitRemoteUrl = 'https://github.com/rob-de-jong-alliander/jenkins-pipelayer'
                     // the name of the branch your jobs are on.
-                    gitConfigJenkinsBranch = 'master'
+                    gitConfigJenkinsBranch = master
                     // a folder on jenkins to put your jobs in. (it will be created)
                     destination = 'pipelines'
                     )
