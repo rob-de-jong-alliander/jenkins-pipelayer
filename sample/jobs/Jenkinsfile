@@ -18,6 +18,8 @@ pipeline {
                 generateJobs {
                     gitConfigJenkinsBranch = 'master'
                     gitRemoteUrl = 'git-uri'
+                    path = 'jobs/**/*.groovy'
+                    destination = 'pipelines'
                 }
                 }
             }
