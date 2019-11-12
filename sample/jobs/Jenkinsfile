@@ -5,21 +5,18 @@
 pipeline {
     agent any
     options {
-        buildDiscarder(logRotator(numToKeepStr: '100'))
+        buildDiscarder(logRotator(numToKeepStr: '10'))
         timeout(time: 30, unit: 'MINUTES')
         disableConcurrentBuilds()
     }
     stages {
         stage('Generate Jobs') {
             steps {
-                {
-                    checkout scm }
-                {
+                checkout scm
                 // this will generate jobs from folder jobs to jenkins folder pipelines
                 generateJobs {
                     gitConfigJenkinsBranch = 'master'
                     gitRemoteUrl = 'git-uri'
-                }
                 }
             }
         }
