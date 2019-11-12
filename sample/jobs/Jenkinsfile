@@ -14,16 +14,16 @@ pipeline {
             steps {
                 checkout scm
                 // this will generate jobs from folder jobs to jenkins folder pipelines
-                generateJobs (
+                generateJobs /*(
                     // the path were to look for property files
                     path = 'jobs/**/*.groovy'
                     // a link to your git repository
-                    gitRemoteUrl = 'https://github.com/rob-de-jong-alliander/jenkins-pipelayer'
+                    //gitRemoteUrl = 'https://github.com/rob-de-jong-alliander/jenkins-pipelayer'
                     // the name of the branch your jobs are on.
                     //gitConfigJenkinsBranch = 'master'
                     // a folder on jenkins to put your jobs in. (it will be created)
                     destination = 'pipelines'
-                    )
+                    )*/
             }
         }
     }
