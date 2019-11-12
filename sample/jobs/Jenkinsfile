@@ -18,7 +18,7 @@ pipeline {
                     // the path were to look for property files
                     path = 'jobs/**/*.groovy'
                     // a link to your git repository
-                    gitRemoteUrl = 'https://a-link-to-your-repository'
+                    gitRemoteUrl = 'https://github.com/rob-de-jong-alliander/jenkins-pipelayer'
                     // the name of the branch your jobs are on.
                     gitConfigJenkinsBranch = 'master'
                     // a folder on jenkins to put your jobs in. (it will be created)
