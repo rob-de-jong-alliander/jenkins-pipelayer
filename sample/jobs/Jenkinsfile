@@ -14,7 +14,7 @@ pipeline {
             steps {
                 checkout scm
                 // this will generate jobs from folder jobs to jenkins folder pipelines
-                generateJobs {
+                generateJobs (
                     // the path were to look for property files
                     path = 'jobs/**/*.groovy'
                     // a link to your git repository
@@ -23,7 +23,7 @@ pipeline {
                     gitConfigJenkinsBranch = 'master'
                     // a folder on jenkins to put your jobs in. (it will be created)
                     destination = 'pipelines'
-                }
+                    )
             }
         }
     }
