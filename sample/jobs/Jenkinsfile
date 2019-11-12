@@ -12,11 +12,14 @@ pipeline {
     stages {
         stage('Generate Jobs') {
             steps {
-                checkout scm
+                {
+                    checkout scm }
+                {
                 // this will generate jobs from folder jobs to jenkins folder pipelines
                 generateJobs {
                     gitConfigJenkinsBranch = 'master'
                     gitRemoteUrl = 'git-uri'
+                }
                 }
             }
         }
