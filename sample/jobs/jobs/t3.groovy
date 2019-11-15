@@ -1,4 +1,10 @@
-job('example') {
+#!/usr/bin/env groovy
+
+freeStyleJob('example') {
+    logRotator(-1, 10)
+    scm {
+        github('jenkinsci/job-dsl-plugin', 'master')
+    }
     triggers {
         gitlabPush {
             buildOnMergeRequestEvents(false)
@@ -10,7 +16,10 @@ job('example') {
             excludeBranches('exclude1,exclude2')
         }
     }
-    steps{
-        sh 'echo test'
+    steps {
+        gradle('clean build')
+    }
+    publishers {
+        archiveArtifacts('job-dsl-plugin/build/libs/job-dsl.hpi')
     }
 }
