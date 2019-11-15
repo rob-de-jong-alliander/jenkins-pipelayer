@@ -24,5 +24,19 @@ pipeline {
                 }
             }
         }
+        stage('Generate Jobs 2') {
+            steps {
+                script {
+                checkout scm
+                // this will generate jobs from folder jobs to jenkins folder pipelines
+                generateJobs {
+                    gitConfigJenkinsBranch = 'master'
+                    gitRemoteUrl = 'git-uri'
+                    path = 'sample/jobs/jobs/**/*.groovy'
+                    destination = 'pipelines groep 2'
+                }
+                }
+            }
+        }
     }
 }
